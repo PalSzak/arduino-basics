@@ -10,3 +10,12 @@ dependencies {
     testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
     testCompile 'junit:junit:4.12'
 }
+
+jar {
+  manifest {
+    attributes 'Main-Class': 'net.f3rn.arduino.demo.bluetooth.BluetoothConsole'
+  }
+  from {
+    configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+  }
+}
