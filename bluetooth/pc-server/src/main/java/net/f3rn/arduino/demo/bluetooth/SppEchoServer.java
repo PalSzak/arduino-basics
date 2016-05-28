@@ -24,12 +24,12 @@ public class SppEchoServer {
     String connectionString = "btspp://localhost:" + uuid +";name=SPP Echo Server";
 
     //open server url
-    StreamConnectionNotifier streamConnNotifier = (StreamConnectionNotifier)Connector.open( connectionString );
 
     //server loop
     while(true) {
       //Wait for client connection
       System.out.println("\nServer Started. Waiting for clients to connect…");
+      StreamConnectionNotifier streamConnNotifier = (StreamConnectionNotifier)Connector.open( connectionString );
       StreamConnection connection = streamConnNotifier.acceptAndOpen();
 
       //Init connection
@@ -63,8 +63,8 @@ public class SppEchoServer {
 
       bReader.close();
       pWriter.close();
+      streamConnNotifier.close();
     }
-    //streamConnNotifier.close();
 
   }
 
