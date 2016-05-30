@@ -1,14 +1,16 @@
 apply plugin: 'groovy'
 
 repositories {
-    jcenter()
+  jcenter()
 }
 
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.4.5'
+  compile 'org.codehaus.groovy:groovy-all:2.4.5'
+  compile 'net.sf.bluecove:bluecove:2.1.0'
+  compile 'net.sf.bluecove:bluecove-gpl:2.1.0'
 
-    testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
-    testCompile 'junit:junit:4.12'
+  testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+  testCompile 'junit:junit:4.12'
 }
 
 jar {
